@@ -34,12 +34,7 @@ const UserProfile = ({ user }: Props) => {
       <Typography sx={{ mb: 1.5 }} color="text.secondary" textAlign="center">
         <i>@{user.username}</i>
       </Typography>
-      <Link
-        href={user.website}
-        variant="body2"
-        textAlign="center"
-        component={Typography}
-      >
+      <Link href={`http://${user.website}`} variant="body2" textAlign="center">
         http://{user.website}
       </Link>
     </CardContent>
