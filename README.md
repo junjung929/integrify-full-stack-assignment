@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# Integrify Full Stack Assignment
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+This project is pre assignment for Full Stack Web Development Training Program by Integrify
+
+## Live Link
+
+You can preview the application via [https://clever-lalande-d9534b.netlify.app](https://clever-lalande-d9534b.netlify.app)
 
 ## Available Scripts
 
