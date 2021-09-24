@@ -1,66 +1,20 @@
-import { Avatar, CardContent, Link, Typography, Grid } from '@mui/material';
-import React, { ReactNode } from 'react';
+import { CardContent, Link, Grid } from '@mui/material';
+import React from 'react';
 import { User } from '../../types';
-import faker from 'faker';
+import UserAvatar from '../UserAvatar';
+import HeadRow from './HeadRow';
+import SecondaryRow from './SecondaryRow';
 
 interface Props {
   user: User;
 }
-const SecondaryRow = ({
-  label,
-  value,
-}: {
-  label: string;
-  value: ReactNode;
-}) => {
-  return (
-    <Grid container item>
-      <Grid
-        item
-        component={Typography}
-        sx={{ mb: 1.5 }}
-        color="text.secondary"
-        xs={4}
-      >
-        {label}:
-      </Grid>
-      <Grid
-        item
-        component={Typography}
-        sx={{ mb: 1.5 }}
-        color="text.secondary"
-        xs={6}
-      >
-        {value}
-      </Grid>
-    </Grid>
-  );
-};
+
 const Content = ({ user }: Props) => {
-  const getImage = (id: number) => {
-    faker.seed(id);
-    return faker.internet.avatar();
-  };
   return (
     <CardContent style={{ display: 'flex', flexDirection: 'column' }}>
-      <Avatar
-        sx={{
-          width: 100,
-          height: 100,
-        }}
-        style={{ alignSelf: 'center', margin: 10 }}
-        alt={user.name}
-        src={getImage(user.id)}
-      />
+      <UserAvatar name={user.name} userId={user.id} />
       <Grid container spacing={1}>
-        <Grid container item>
-          <Grid item component={Typography} variant="h5" xs={4}>
-            Name:
-          </Grid>
-          <Grid item component={Typography} variant="h5" xs={6}>
-            {user.name}
-          </Grid>
-        </Grid>
+        <HeadRow text={user.name} />
         <SecondaryRow label="Username" value={user.username} />
         <SecondaryRow label="Email" value={user.email} />
         <SecondaryRow label="Phone" value={user.phone} />
@@ -73,11 +27,7 @@ const Content = ({ user }: Props) => {
         />
       </Grid>
       <Grid container spacing={1}>
-        <Grid container item>
-          <Grid item component={Typography} variant="h5" xs={4}>
-            Address
-          </Grid>
-        </Grid>
+        <HeadRow text="Address" />
         <SecondaryRow label="Street" value={user.address.street} />
         <SecondaryRow label="Suite" value={user.address.suite} />
         <SecondaryRow label="City" value={user.address.city} />
