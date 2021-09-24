@@ -21,13 +21,13 @@ const HomeContainer = () => {
   }, []);
 
   if (!users && loading) {
-    return <Container>loading...</Container>;
+    return <Container style={{ marginTop: 20 }}>loading...</Container>;
   }
   if (!users || users.length < 1) {
-    return <Container>No users found</Container>;
+    return <Container style={{ marginTop: 20 }}>No users found</Container>;
   }
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="md" style={{ marginTop: 20 }}>
       <UserCardList users={users} />
     </Container>
   );

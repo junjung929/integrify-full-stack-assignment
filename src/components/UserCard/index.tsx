@@ -18,7 +18,7 @@ const UserCard = ({ user, className }: Props) => {
       className={className}
       sx={{
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
         display: 'flex',
         flexDirection: 'column',
       }}

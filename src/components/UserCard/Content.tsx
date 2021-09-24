@@ -3,6 +3,8 @@ import React from 'react';
 import { User } from '../../types';
 import faker from 'faker';
 
+faker.seed(123);
+
 interface Props {
   user: User;
 }

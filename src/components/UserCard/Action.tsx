@@ -7,7 +7,7 @@ interface Props {
 }
 const Action = ({ to }: Props) => {
   return (
-    <CardActions>
+    <CardActions style={{ marginBottom: 10 }}>
       <Button variant="contained" component={Link} to={to}>
         more details
       </Button>
