@@ -20,9 +20,10 @@ const HomeContainer = () => {
       });
   }, []);
 
-  if (!users && loading) {
+  if ((!users || users.length < 1) && loading) {
     return <Container style={{ marginTop: 20 }}>loading...</Container>;
   }
+
   if (!users || users.length < 1) {
     return <Container style={{ marginTop: 20 }}>No users found</Container>;
   }
