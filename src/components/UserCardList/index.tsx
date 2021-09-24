@@ -21,7 +21,7 @@ const UserCardList = ({ users }: Props) => {
   return (
     <Grid container spacing={4} alignItems="stretch">
       {users.map((user) => (
-        <Grid key={`user-${user.id}`} item xs>
+        <Grid key={`user-${user.id}`} item xs={4}>
           <UserCard user={user} className={classes.card} />
         </Grid>
       ))}
