@@ -3,8 +3,6 @@ import React, { ReactNode } from 'react';
 import { User } from '../../types';
 import faker from 'faker';
 
-faker.seed(123);
-
 interface Props {
   user: User;
 }
@@ -39,6 +37,10 @@ const SecondaryRow = ({
   );
 };
 const Content = ({ user }: Props) => {
+  const getImage = (id: number) => {
+    faker.seed(id);
+    return faker.internet.avatar();
+  };
   return (
     <CardContent style={{ display: 'flex', flexDirection: 'column' }}>
       <Avatar
@@ -48,7 +50,7 @@ const Content = ({ user }: Props) => {
         }}
         style={{ alignSelf: 'center', margin: 10 }}
         alt={user.name}
-        src={faker.internet.avatar()}
+        src={getImage(user.id)}
       />
       <Grid container spacing={1}>
         <Grid container item>
